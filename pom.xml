@@ -25,9 +25,9 @@
 		<javax.transaction.version>1.1</javax.transaction.version>
 	</properties>
 	<modules>
-		<module>model</module>
-		<module>service</module>
-		<module>webapp</module>
+		<module>vtechie-model</module>
+		<module>vtechie-service</module>
+		<module>vtechie-webapp</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
