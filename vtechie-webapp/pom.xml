@@ -6,6 +6,10 @@
   <packaging>war</packaging>
   <name>vtechie-webapp</name>
   <dependencies>
+  	<dependency>
+  				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+	</dependency>
 	<dependency>
       <groupId>com.vtechie</groupId>
       <artifactId>vtechie-model</artifactId>
