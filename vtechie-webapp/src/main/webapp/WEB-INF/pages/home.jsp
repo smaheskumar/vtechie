@@ -1,12 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-Hello
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>D3 Hello World</title>
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?2.4.5"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript">
+
+		d3.csv("/resources/data.csv",function(data){
+		
+			var canvas=d3.select("body").append("svg")
+				.attr("width",500)
+				.attr("height",500)
+				
+			canvas.selectAll("rect")
+				.data(data)
+				.enter()
+					.append("rect")
+					.attr("width",function (d){return d*age * 10;})
+					.attr("height",48)
+					.attr("y",function (d,i){return i* 50;})
+					.attr("fill","blue");
+			canvas.selectAll("text")
+				.data(data)
+				.enter()
+					.append("text")
+					.attr("fill","white")
+					.attr("y",function (d,i){return i* 50 + 24;})
+					.text(function (d){return d.name;})
+					
+		})
+
+    </script>
+  </body>
 </html>
