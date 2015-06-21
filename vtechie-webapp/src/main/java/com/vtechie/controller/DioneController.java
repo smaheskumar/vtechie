@@ -41,4 +41,9 @@ public class DioneController {
  
 	}
 
+	@RequestMapping(value = "/check", method = RequestMethod.GET)
+	public String check(ModelMap model) {
+		logger.debug("Inside controller");
+		return "testPage";
+	}
 }
