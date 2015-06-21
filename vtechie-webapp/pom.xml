@@ -18,6 +18,10 @@
       <groupId>com.vtechie</groupId>
       <artifactId>vtechie-service</artifactId>
     </dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+	</dependency>    
   </dependencies>
   <build>
    <plugins>
