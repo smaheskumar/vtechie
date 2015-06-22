@@ -23,7 +23,7 @@
 			<li><a href="../js/dione.js">../js/dione.js</a></li>	
 		</ul>
 		<h2>Check CSS</h2>
-		<h3>This page is displayed like this because of me</h3>
+		<h3>This page is displaying like this because of me</h3>
 		<ul>
 		<li><a href="css/dione.bar.css">css/dione.bar.css</a></li>
 		<li><a href="css/dione.group.bar.css">css/dione.group.bar.css</a></li>
