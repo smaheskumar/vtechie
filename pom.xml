@@ -25,7 +25,7 @@
 	<modules>
 		<module>dione-model</module>
 		<module>dione-service</module>
-		<module>dione</module>
+		<module>dione-webapp</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
