@@ -46,4 +46,10 @@ public class DioneController {
 		logger.debug("Inside controller");
 		return "testPage";
 	}
+	
+	@RequestMapping(value = "/masterpass.com", method = RequestMethod.GET)
+	public String loadMasterpass(ModelMap model) {
+		logger.debug("Inside controller");
+		return "masterpass";
+	}
 }
