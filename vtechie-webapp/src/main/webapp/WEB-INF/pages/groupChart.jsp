@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-<link rel="stylesheet" type="text/css" href="css/dione.css"/>
-<script src="js/d3.v3.min.js"></script>
-<script src="js/d3.tip.v0.6.3.js"></script>
-
+<link rel="stylesheet" type="text/css" href="../css/dione.group.bar.css"/>
+<script src="../js/d3.v3.min.js"></script>
 <script>
-var margin = {top: 40, right: 20, bottom: 30, left: 40},
+var regionName = '${region}';
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var formatPercent = d3.format("1");
-
-var x = d3.scale.ordinal()
+var x0 = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
+
+var x1 = d3.scale.ordinal();
 
 var y = d3.scale.linear()
     .range([height, 0]);
 
+var color = d3.scale.ordinal()
+    .range(["grey", "skyblue", "#d0743c", "steelblue"]);
+
 var xAxis = d3.svg.axis()
-    .scale(x)
+    .scale(x0)
     .orient("bottom");
 
 var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left")
-    .tickFormat(formatPercent);
-
-var tip = d3.tip()
-  .attr('class', 'd3-tip')
-  .offset([-10, 0])
-  .html(function(d) {
-    return "<strong>Offers:</strong> <span style='color:red'>" + d.offers + "</span>";
-  })
+    .tickFormat(d3.format(".2s"));
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -40,11 +36,18 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-svg.call(tip);
+d3.csv("../resources/csv/"+regionName+".csv", function(error, data) {
+  if (error) throw error;
 
-d3.csv("../resources/csv/regionoffers.csv", type, function(error, data) {
-  x.domain(data.map(function(d) { return d.region; }));
-  y.domain([0, d3.max(data, function(d) { return d.offers; })]);
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+
+  data.forEach(function(d) {
+    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+  });
+
+  x0.domain(data.map(function(d) { return d.State; }));
+  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
+  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -59,25 +62,42 @@ d3.csv("../resources/csv/regionoffers.csv", type, function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Offers");
+      .text("Offers Usage");
 
-  svg.selectAll(".bar")
+  var state = svg.selectAll(".state")
       .data(data)
-    .enter().append("a")
-	  .attr("xlink:href", function(d) {return "http://localhost:8080/vtechie-webapp-1.0/getofferbyage/"+"groupdata"}).append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.region); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.offers); })
-      .attr("height", function(d) { return height - y(d.offers); })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+
+  state.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("width", x1.rangeBand())
+      .attr("x", function(d) { return x1(d.name); })
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+      .style("fill", function(d) { return color(d.name); });
+
+  var legend = svg.selectAll(".legend")
+      .data(ageNames.slice().reverse())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
 
 });
-
-function type(d) {
-  d.offers = +d.offers;
-  return d;
-}
 
 </script>

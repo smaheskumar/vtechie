@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-<link rel="stylesheet" type="text/css" href="css/dione.css"/>
-<script src="js/d3.v3.min.js"></script>
-<script src="js/d3.tip.v0.6.3.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/dione.bar.css"/>
+<script src="../js/d3.v3.min.js"></script>
+<script src="../js/d3.tip.v0.6.3.js"></script>
 <script>
 var margin = {top: 40, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
@@ -63,7 +63,7 @@ d3.csv("../resources/csv/regionoffers.csv", type, function(error, data) {
   svg.selectAll(".bar")
       .data(data)
     .enter().append("a")
-       .attr("href", "http://localhost:8080/vtechie-webapp-1.0/group?region=").append("groupdata").append("rect")
+	  .attr("xlink:href", function(d) {return "http://localhost:8080/vtechie-webapp-1.0/getofferbyage/"+"groupdata"}).append("rect")
       .attr("class", "bar")
       .attr("x", function(d) { return x(d.region); })
       .attr("width", x.rangeBand())
@@ -80,3 +80,4 @@ function type(d) {
 }
 
 </script>
+</body>
