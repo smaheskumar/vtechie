@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  JBoss Server Configuration                                           -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<!-- See http://www.jboss.org/community/wiki/Multiple1PC for information about local-tx-datasource -->
+<!-- $Id: postgres-ds.xml 106351 2010-06-30 19:17:22Z rrajesh $ -->
+<!-- ==================================================================== -->
+<!--  Datasource config for Postgres                                      -->
+<!-- ==================================================================== -->
+<datasources>    
+    <local-tx-datasource>
+        <jndi-name>jdbc/DioneDS</jndi-name>       
+		<connection-url>jdbc:postgresql://10.157.130.138:5432/eop_db</connection-url>
+        <driver-class>org.postgresql.Driver</driver-class>
+        <user-name>eopuser</user-name>
+        <password>E0P_w0rk5</password>
+		<new-connection-sql>set search_path = cust_eop;</new-connection-sql>
+        <check-valid-connection-sql>set search_path = cust_eop;</check-valid-connection-sql>  	    
+		<min-pool-size>20</min-pool-size>
+        <max-pool-size>100</max-pool-size>
+        <metadata>
+            <type-mapping>PostgreSQL</type-mapping>
+        </metadata>
+    </local-tx-datasource>
+</datasources>
