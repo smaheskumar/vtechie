@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<import resource="classpath:${db.type:in-mem}-db.xml" />
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		p:persistenceXmlLocation="classpath*:META-INF/persistence.xml"
+		p:persistenceUnitName="DionePU" p:dataSource-ref="dataSource"
+		p:jpaVendorAdapter-ref="hibernateVendor" depends-on="transactionManager">
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JOTMTransactionManagerLookup</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="hibernateVendor"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+		p:showSql="false" />
+
+	<bean id="jotm" class="org.springframework.transaction.jta.JotmFactoryBean" depends-on="dataSource"/> 
+	
+	<bean id="transactionManager"
+		class="org.springframework.transaction.jta.JtaTransactionManager" depends-on="jotm">
+		<property name="transactionManager" ref="jotm" />
+		<property name="userTransaction" ref="jotm" />
+		<property name="allowCustomIsolationLevels" value="true" />
+	</bean>
+	<tx:annotation-driven />
+	<context:component-scan base-package="com.dione"/>
+</beans>
