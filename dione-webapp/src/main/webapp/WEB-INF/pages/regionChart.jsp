@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-<link rel="stylesheet" type="text/css" href="../css/dione.bar.css"/>
-<script src="../js/d3.v3.min.js"></script>
-<script src="../js/d3.tip.v0.6.3.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/dione.bar.css"/>
+<script src="${pageContext.request.contextPath}/js/d3.v3.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/d3.tip.v0.6.3.js"></script>
 <script>
 var margin = {top: 40, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
@@ -41,7 +41,7 @@ var svg = d3.select("body").append("svg")
 
 svg.call(tip);
 
-d3.csv("../resources/csv/regionoffers.csv", type, function(error, data) {
+d3.csv("${pageContext.request.contextPath}/resources/csv/regionoffers.csv", type, function(error, data) {
   x.domain(data.map(function(d) { return d.region; }));
   y.domain([0, d3.max(data, function(d) { return d.offers; })]);
 

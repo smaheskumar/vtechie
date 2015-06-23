@@ -4,15 +4,15 @@
  <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>Masterpass</title>
-    <script src="../js/jquery-1.11.1.min.js"></script>
-	<script language="javascript" src="../js/bootstrap.min.js"></script>
-    <script language="javascript" src="../js/custom.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
+	<script language="javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script language="javascript" src="${pageContext.request.contextPath}/js/custom.js"></script>
 	
     <!-- Bootstrap -->
-	<link href="../css/bootstrap.min.css" rel="stylesheet"><!-- Custom Css -->
-	<link href="../css/font-awesome.min.css" rel="stylesheet">
-	<link href="../css/main.css" rel="stylesheet">
-	<link href="../images/favicon.png" rel="icon" type="image/png"><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"><!-- Custom Css -->
+	<link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/images/favicon.png" rel="icon" type="image/png"><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   </head>
   
   
@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="../img/logo.png" alt="masterpass" width="153" height="22"></a>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="${pageContext.request.contextPath}/img/logo.png" alt="masterpass" width="153" height="22"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -77,7 +77,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<img src="../img/logo1.png">
+		<img src="${pageContext.request.contextPath}/img/logo1.png">
         <!--<h4 class="modal-title" id="myModalLabel">Login</h4>-->
       </div>
 	  
@@ -96,11 +96,11 @@
 		<div class="col-lg-3">
 				Instructions
 				<div style="
-    background-image: url(../img/wallet_lg_bg.png);
+    background-image: url(${pageContext.request.contextPath}/img/wallet_lg_bg.png);
     height: 133px;
     width: 196px;
             "> <div style="
-    background-image: url(../img/logo1.png);
+    background-image: url(${pageContext.request.contextPath}/img/logo1.png);
     width: 153px;
     height: 22px;
     position: relative;
@@ -152,7 +152,7 @@
     <div class="modal-content main-screen">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img src="../img/logo1.png">
+        <img src="${pageContext.request.contextPath}/img/logo1.png">
       </div>
       <div class="modal-body">
         <div class="row">

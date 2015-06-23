@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-<link rel="stylesheet" type="text/css" href="../css/dione.group.bar.css"/>
-<script src="../js/d3.v3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/dione.group.bar.css"/>
+<script src="${pageContext.request.contextPath}/js/d3.v3.min.js"></script>
 <script>
 var regionName = '${region}';
 
@@ -36,7 +36,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("../resources/csv/"+regionName+".csv", function(error, data) {
+d3.csv("${pageContext.request.contextPath}/resources/csv/"+regionName+".csv", function(error, data) {
   if (error) throw error;
 
   var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });

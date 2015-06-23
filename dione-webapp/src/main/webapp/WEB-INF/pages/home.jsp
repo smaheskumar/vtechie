@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <title>D3 Hello World</title>
-    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/d3.v3.min.js"></script>
   </head>
   <body>
     <script type="text/javascript">
