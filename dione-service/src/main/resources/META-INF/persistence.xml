@@ -4,6 +4,7 @@
 	version="2.0">
 
 	<persistence-unit name="DionePU" transaction-type="JTA">
+		<jta-data-source>jdbc/DioneDS</jta-data-source>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
