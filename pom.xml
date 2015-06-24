@@ -31,6 +31,8 @@
 		<joda-time.version>2.3</joda-time.version>
 		<joda-time-hibernate.version>1.2</joda-time-hibernate.version>
 		<jstl.version>1.2</jstl.version>
+		<javamail.version>1.4</javamail.version>
+		<javaxactivation.version>1.1.1</javaxactivation.version>
 	</properties>
 	<modules>
 		<module>dione-model</module>
@@ -238,6 +240,17 @@
 				<artifactId>jstl</artifactId>
 				<version>${jstl.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>${javamail.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<version>${javaxactivation.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 </project>
