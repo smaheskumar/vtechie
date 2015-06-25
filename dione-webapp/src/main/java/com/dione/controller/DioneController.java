@@ -29,6 +29,7 @@ public class DioneController {
 	}
 
 	@RequestMapping(value = "/getregionoffers", method = RequestMethod.GET)
+	
 	public String getRegionOffers(ModelMap model) {
  
 		logger.debug("Inside controller");
@@ -53,9 +54,17 @@ public class DioneController {
 		return "testPage";
 	}
 	
-	@RequestMapping(value = "/masterpass.com", method = RequestMethod.GET)
+	@RequestMapping(value = "/masterpass", method = RequestMethod.GET)
 	public String loadMasterpass(ModelMap model) {
 		logger.debug("Inside controller");
 		return "masterpass";
 	}
+	
+	@RequestMapping(value = "/tempmasterpass", method = RequestMethod.GET)
+	public String loadtempMasterpass(ModelMap model) {
+		logger.debug("Inside controller");
+		return "tempmasterpass";
+	}
+	
+
 }

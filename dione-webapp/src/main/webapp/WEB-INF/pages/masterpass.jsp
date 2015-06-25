@@ -7,12 +7,17 @@
     <script src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
 	<script language="javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <script language="javascript" src="${pageContext.request.contextPath}/js/custom.js"></script>
+    <script language="javascript" src="${pageContext.request.contextPath}/js/offers.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	
     <!-- Bootstrap -->
 	<link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet"><!-- Custom Css -->
-	<link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet">
+	<%-- <link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet"> --%>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath}/images/favicon.png" rel="icon" type="image/png"><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<link href="${pageContext.request.contextPath}/img/favicon.png" rel="icon" type="image/png"><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   </head>
   
   
@@ -52,7 +57,8 @@
     <header id="header">
         <div class="container">
             <div class="intro-text">
-
+				Your Shortcut to What Counts.
+				Simple and secure shopping every time on any connected device with MasterPas by MasterCard.
             </div>
         </div>
     </header>
@@ -94,7 +100,7 @@
         <div class="row">
 		<div class="col-lg-2"></div>
 		<div class="col-lg-3">
-				Instructions
+				
 				<div style="
     background-image: url(${pageContext.request.contextPath}/img/wallet_lg_bg.png);
     height: 133px;
@@ -156,264 +162,63 @@
       </div>
       <div class="modal-body">
         <div class="row">
-			<div class="col-md-2 leftnav">
+			<div class="col-md-2 leftnav" style="height:800px">
+				<div><i class="fa fa-home iconOrange fa-3x" style="float: left; color:#FB9B1E" ></i><h5 class="navheader" style="position: relative; left: 10px; top: 15px; background-color: transparent; font-family: initial; font-size: medium;">HOME</h5>
+				<br> <br></div>
+				<div>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">MY ACCOUNT</h5>
+					  <div>
+						<ul>
+						  <li><i class="fa fa-user fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">PROFILE</p></li>
+						  <li><i class="fa fa-cog fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">SETTINGS</p></li>
+						  <li><i class="fa fa-share-alt fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">CONNECTIONS</p></li>
+						</ul>
+					  </div>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">MY WALLET</h5>
+					  <div>
+						<ul>
+						  <li><i class="fa fa-credit-card fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: medium;">PAYMENT METHODS</p></li>
+						  <li><i class="fa fa-location-arrow fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;">ADDRESS</p></li>
+						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY PROGRAM</a></li>
+						  <li><i class="fa fa-cart-plus fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="loyalty" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY OFFERS</a></li>
+						</ul>	
+					  </div>
+					  <div></div>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">WHATS NEW</h5>
+					<br>	
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">LEGAL</h5>
+						<div>
+							<ul>
+							  <li><h6 style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: large;">Privacy</h6></li>
+							  <li><h6 style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: large;">Terms of Use</h6></li>
+							</ul>
+						 </div>
+						<br>
+					<div><i class="fa fa-sign-out fa-2x" style="float: left; color:#FB9B1E"></i><h5 class="navheader" style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">SIGN OUT</h5></div>
+				</div>
+				<!-- <h5><a href="#" class="navheader">Home</a></h5>
 				<h5><a href="#" class="navheader">My Wallet</a></h5>
 				<ul class="navitems" style="display:none">
 				  <li><a href="#">Payment Methods</a></li>
 				  <li><a href="#">Addresses</a></li>
-				  <li><a href="#">Loyality Programms</a></li>
+				  <li><a href="#" class="programms">Loyality Programms</a></li>
 				  <li><a href="#" class="loyalty">Loyality Offers</a></li>
-				</ul>
+				</ul -->
 			</div>
-		<div class="col-md-9" style="margin-left:10px">
+		<div class="col-md-9" style="margin-left: 10px; height:800px; overflow:scroll; overflow-x:none">
 			<div id="loyalty" style="display:none">
-			<div class="row">
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
 			</div>
-			<hr>
-			<div class="row">
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
+			<div id="programms" style="display:none">
+				<div id="map_wrapper">
+					<div id="map_canvas" class="mapping"></div>
 				</div>
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-				<div class="col-sm-3 padding">
-					<div class="col-item">
-                                <div class="photo">
-                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                                </div>
-                                <div class="info">
-                                    <div class="row">
-                                        <div class="price col-md-6">
-                                            <h5>
-                                                Sample Product</h5>
-                                            <h5 class="price-text-color">
-                                                $199.99</h5>
-                                        </div>
-                                        <div class="rating hidden-sm col-md-6">
-                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                            </i><i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                        <p class="btn-details">
-                                            <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                </div>
-                            </div>
-				</div>
-			</div>
+				<!--<iframe width="780" height="700" frameborder="10px" style="border:10px"  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyATwIeyRwOg89rJqkMCbQB4uim8hzm-D0c&q=1035+Aster+Ave+Sunnyvale+CA" allowfullscreen>
+				</iframe>-->
 			</div>
 		</div>
+		<!-- <div class="col-md-9" style="margin-left:10px">
+			
+		</div> -->
 		</div>
       </div>
     </div>
@@ -421,6 +226,17 @@
 </div>
 
 	<script type="text/javascript">
+	$(function() {
+		var icons = {
+		  header: "ui-icon-plusthick",
+		  activeHeader: "ui-icon-minusthick"
+		};
+		$( "#accordion" ).accordion({
+		  icons: icons
+		  //background-color: black
+		});
+	  });
+	
     $(document).ready(function() {
 		$(".loyalty").click(function(){
 			$("#loyalty").slideDown();
@@ -435,6 +251,122 @@
 		
 		
 	});
+    
+    $(document).ready(function() {
+		$(".programms").click(function(){
+            //loadOffersJSON();
+			$("#programms").slideDown();
+			$("#loyalty").hide();
+		});	
+		$(".navitems").hide();
+		$(".navheader").click(function(){
+			$(".navitems").slideDown();
+		});
+		
+		var winheight = $(window).height();
+		$("#header").height(winheight)
+		
+		
+	});
+    
+    jQuery(function($) {
+        // Asynchronously Load the map API 
+        var script = document.createElement('script');
+        script.src = "http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize";
+        document.body.appendChild(script);
+    	});
+    
+    function initialize() {
+        var map;
+        var bounds = new google.maps.LatLngBounds();
+    	
+        var mapOptions = {
+            mapTypeId: 'roadmap'
+        };
+    	var markers =[];
+    	var infoWindowContent =[];
+//    	var longitude;
+    	var data_file = "searchOffers_response.json";
+         $.ajax({
+       		method: "GET",
+      		url: data_file,
+    	})
+    	.done(function(data){
+    			var offerData = data.BrowseOffersResponse.Return.OfferData;
+    			for(var i = 0; i < offerData.length; i++){
+    				var entry = offerData[i].SourceGeos.Geo;
+    				markers.push([entry.Country._DisplayText,entry.Latitude,entry.Longitude]);
+    				
+    				imageUrl = 'http://placehold.it/350x260';
+    				var imageentry = offerData[i].OfferMedia.OfferImage.Entry;
+    				for(var j = 0; j < imageentry.length;j++){
+    					if(imageentry[j].Key == 'MERCHANT_LOGO'){
+    						imageUrl = imageentry[j].Value.Item.ImageUrl;
+    					}
+    				}
+    				
+    				var divHtml = '<div class="col-sm-3 padding"><div class="col-item" Style="width:90px; height:100px">';
+    				divHtml += '<div class="photo"><img src="' + imageUrl  + '" style="display:block;height:auto;max-width:90px" alt="a" /></div>';
+    				divHtml += '<div class="info"><div class="row"><div class="price col-md-10"><div style="height: 60px;"><h5 style="color: wheat; font-size: small;">';
+    				divHtml += offerData[i].Headline.substr(0,20);
+    				divHtml += '</h5></div><h5 class="price-text-color" style="font-size: smaller;">' + offerData[i].TagCategory + '</h5>';
+    				divHtml += '</div></div><div class="separator clear-left">' +
+    	                            '<p class="btn-details">' +
+    	                                '<i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm" style="font-size: xx-small;">More details</a></p>'+
+    	                        '</div>'+
+    	                        '<div class="clearfix">' +
+    	                        '</div>' +
+    	                    '</div>' +
+    	                '</div>' +
+    				'</div>';
+    				infoWindowContent.push([divHtml]) ;
+    			}
+    			
+    			// Display a map on the page
+        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        map.setTilt(45);
+            
+        // Multiple Markers
+        
+                         
+        // Info Window Content
+    	//copy Text from Note pad++
+            
+        // Display multiple markers on a map
+        var infoWindow = new google.maps.InfoWindow(), marker, i;
+        
+        // Loop through our array of markers & place each one on the map  
+        for( i = 0; i < markers.length; i++ ) {
+            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            bounds.extend(position);
+            marker = new google.maps.Marker({
+                position: position,
+                map: map,
+                title: markers[i][0]
+            });
+            
+            // Allow each marker to have an info window    
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                   infoWindow.setContent(infoWindowContent[i][0]);
+                   infoWindow.open(map, marker);
+    			   
+                }
+            })(marker, i));
+
+            // Automatically center the map fitting all markers on the screen
+            map.fitBounds(bounds);
+        }
+
+        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+            //this.setZoom(2);
+            google.maps.event.removeListener(boundsListener);
+    	});                
+        
+        });
+        
+    }
 </script>
 </body>
 </html>

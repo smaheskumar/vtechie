@@ -386,38 +386,9 @@ fieldset[disabled] .btn-primary.active {
 	margin:0;
 }
 
-#balaji	{
-	background:#f5f5f5; 
-	border-top:1px solid #edebeb;
-	border-bottom:1px solid #edebeb
-}
-#balaji h2 {
-	margin: 0;
-	line-height: normal;
-	color: #f06743 !important;
-	font-size: 36px !important;
-	font-weight: 400 !important;
-	line-height: 50px !important;
-}
-#balaji p {
-	margin-top: 15px;
-	margin-bottom: 0;
-	/*padding-top: 15px;*/
-	position: relative;
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 28px;
-	color: #212121;
-	/**/
-}
-#balaji .col-md-4	{
-	padding:0; 
-	margin:0; 
-	padding-right:10px;
-	margin-top:30px
-}
-#balaji .col-md-4 p{
-	width:88%;
+.price-text-color {
+	color: wheat;
+	text-align: center;
 }
 section	{
 	margin-top:10px;
@@ -508,6 +479,14 @@ section#services .col-md-3 p{
 		color: #fff;
 		font-weight: 300;
     }
+	#map_wrapper {
+    height: 400px;
+	}
+
+	#map_canvas {
+    width: 100%;
+    height: 100%;
+	}
 }
 
 /*Footer*/
@@ -519,13 +498,14 @@ footer .bottom a{font-size:12px;color:#fff;}
 
 
 .modal-dialog{width:1000px!important}
-.col-item{color:#fff;border: 1px solid #3d3d4d;border-radius: 5px;background: #3d3d4d;}
+.col-item{color:#fff;border: 1px solid #3d3d4d;border-radius: 5px;background: black;}
 .padding	{padding:0!important; padding-right:2px!important}
 .margin		{margin:0!important}
 
-
+.img-map-responsive {display:block;height:auto;max-width:50%}
 .leftnav			{padding:0;background:#1e1e1e; padding:0}
 .leftnav .navheader	{background:#1e1e1e;width:100%; color:#888888}
+.leftnav .signout	{background:#1e1e1e;width:100%; color:#FB9B1E}
 .leftnav ul			{padding:0;margin:0; padding-left:20px;}
 .leftnav ul	li		{line-height:35px; list-style-type:none}
 .leftnav ul	li a	{color:#fff}

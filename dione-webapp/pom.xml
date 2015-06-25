@@ -43,6 +43,15 @@
 					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<warName>dione</warName>
+					<outputDirectory>C:\Temp-comp\Aravind M\apache-tomcat-7.0.62\webapps</outputDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<parent>
