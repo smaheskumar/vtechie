@@ -17,6 +17,10 @@ body {
   fill: grey;
 }
 
+.arc:hover {
+  fill: grey;
+}
+
 .x.axis path {
   display: none;
 }

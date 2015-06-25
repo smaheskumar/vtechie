@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dione.eop.api.ApiClient;
+import com.dione.eop.api.io.SearchRequest;
 import com.dione.service.sample.SampleService;
 
 @Controller
@@ -18,6 +20,8 @@ public class DioneController {
 	private final static Logger logger = LoggerFactory.getLogger(DioneController.class);
 	@Autowired
 	private SampleService sampleService;
+	
+	private ApiClient apiClient = new ApiClient();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(ModelMap model) {
@@ -34,7 +38,7 @@ public class DioneController {
  
 		logger.debug("Inside controller");
 		
-		return "regionChart";
+		return "regionPieChart";
  
 	}
 	
@@ -57,6 +61,8 @@ public class DioneController {
 	@RequestMapping(value = "/masterpass", method = RequestMethod.GET)
 	public String loadMasterpass(ModelMap model) {
 		logger.debug("Inside controller");
+		
+      
 		return "masterpass";
 	}
 	

@@ -1,12 +1,12 @@
-function loadOffersJSON()
+function loadOffersJSON(data_path)
 {
     var loyaltyDiv = $("#loyalty");
-    var data_file = "${pageContext.request.contextPath}/resources/json/searchOffers_response.json";
-    $.ajax({
+    /*$.ajax({
    		method: "GET",
   		url: data_file,
 	})
-  	.done(function( data ) {
+  	.done(function( data ) {*/
+	$.getJSON( data_path, function( data ) {
       	var offerData = data.BrowseOffersResponse.Return.OfferData;
    	    var divHtml = '', rowHtml = '<div class="row">';
 

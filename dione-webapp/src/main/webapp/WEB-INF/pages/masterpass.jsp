@@ -226,6 +226,7 @@
 </div>
 
 	<script type="text/javascript">
+	var data_path = "${pageContext.request.contextPath}/resources/json/searchOffers_response.json";
 	$(function() {
 		var icons = {
 		  header: "ui-icon-plusthick",
@@ -239,6 +240,7 @@
 	
     $(document).ready(function() {
 		$(".loyalty").click(function(){
+			loadOffersJSON(data_path);
 			$("#loyalty").slideDown();
 		});
 		$(".navitems").hide();
@@ -286,12 +288,13 @@
     	var markers =[];
     	var infoWindowContent =[];
 //    	var longitude;
-    	var data_file = "searchOffers_response.json";
-         $.ajax({
+    	/*$.ajax({
        		method: "GET",
       		url: data_file,
-    	})
-    	.done(function(data){
+    	})*/
+    	//.done(function(data){
+		$.getJSON( data_path, function( data ) {
+				console.log(data);
     			var offerData = data.BrowseOffersResponse.Return.OfferData;
     			for(var i = 0; i < offerData.length; i++){
     				var entry = offerData[i].SourceGeos.Geo;
@@ -364,7 +367,7 @@
             google.maps.event.removeListener(boundsListener);
     	});                
         
-        });
+       });
         
     }
 </script>
