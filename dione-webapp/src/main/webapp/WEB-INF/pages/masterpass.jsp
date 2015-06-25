@@ -181,6 +181,9 @@
 						  <li><i class="fa fa-location-arrow fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;">ADDRESS</p></li>
 						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY PROGRAM</a></li>
 						  <li><i class="fa fa-cart-plus fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="loyalty" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY OFFERS</a></li>
+						  	<ul>
+						  		<li><i class="fa fa-globe fa-1x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -10px; background-color: transparent; font-family: initial; font-size: small;">Near By</a></li>
+						  	</ul>
 						</ul>	
 					  </div>
 					  <div></div>
@@ -206,6 +209,86 @@
 				</ul -->
 			</div>
 		<div class="col-md-9" style="margin-left: 10px; height:800px; overflow:scroll; overflow-x:none">
+			<div id="default">
+				<div >
+				<h4 style="
+    position: relative;    display: block;    bottom: 0;    
+    left: -15px;    
+    width: 700px;    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
+    padding-bottom: 10px; padding-top: 10px;">Welcome to your wallet</h4>
+		<br>
+	
+				<h6 style="position: relative;    display: block;    bottom: 0;  left: -15px;    
+    width: 700px;    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
+    padding-bottom: 10px; padding-top: 10px;">Manage your payment methods, address list and much more.</h6>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-lg-4">
+						<i class="fa fa-credit-card fa-5x" style="padding-left: 120px; color: #FB9B1E;"></i>
+					</div>
+					
+					<div class="col-lg-5">
+						<h6 style="top: 10px; position: relative; font-size: large; color:black">Payments methods</h6>
+						<h6 style="top: 10px; position: relative;" class="fa fa-plus-circle">Add</h6>
+						<h6 style="left:10px; top: 10px; position: relative;" class="fa fa-list-ul">View All</h6>
+					</div>
+					<br>
+					<h6 style="position: relative;    display: block;    bottom: 0;  left: -15px;    
+    width: 700px;    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
+    padding-bottom: 10px; padding-top: 10px; top:70px"></h6>
+				</div>
+				
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-lg-4">
+						<i class="fa fa-envelope-o fa-5x" style="padding-left: 120px; color: #FB9B1E;"></i>
+					</div>
+					
+					<div class="col-lg-5">
+						<h6 style="top: 10px; position: relative; font-size: large; color:black">Address</h6>
+						<h6 style="top: 10px; position: relative;" class="fa fa-plus-circle">Add</h6>
+						<h6 style="left:10px; top: 10px; position: relative;" class="fa fa-list-ul">View All</h6>
+					</div>
+					<br>
+
+					<h6 style="position: relative;    display: block;    bottom: 0;  left: -15px;    
+    width: 700px;    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
+    padding-bottom: 10px; padding-top: 10px; top:70px"></h6>
+				</div>
+				
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-lg-4">
+						<i class="fa fa-shopping-cart fa-5x" style="padding-left: 120px; color: #FB9B1E;"></i>
+					</div>
+					
+					<div class="col-lg-5">
+						<h6 style="top: 10px; position: relative; font-size: large; color:black">Loyalty Program</h6>
+						<h6 style="top: 10px; position: relative;" class="fa fa-plus-circle">Add</h6>
+						<h6 style="left:10px; top: 10px; position: relative;" class="fa fa-list-ul">View All</h6>
+					</div>
+					<br>
+					<h6 style="position: relative;    display: block;    bottom: 0;  left: -15px;    
+    width: 700px;    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
+    padding-bottom: 10px; padding-top: 10px; top:70px"></h6>
+				</div>
+				<br>
+				<br>
+				<div class="row">
+					<h4 class="col-lg-9" style="top:70px">We've added something new!</h4>
+				
+				</div>
+				
+				</div>
+			</div>
+			
 			<div id="loyalty" style="display:none">
 			</div>
 			<div id="programms" style="display:none">
@@ -242,6 +325,8 @@
 		$(".loyalty").click(function(){
 			loadOffersJSON(data_path);
 			$("#loyalty").slideDown();
+			$("#programms").hide();
+			$("#default").hide();
 		});
 		$(".navitems").hide();
 		$(".navheader").click(function(){
@@ -259,6 +344,7 @@
             //loadOffersJSON();
 			$("#programms").slideDown();
 			$("#loyalty").hide();
+			$("#default").hide();
 		});	
 		$(".navitems").hide();
 		$(".navheader").click(function(){
@@ -299,7 +385,6 @@
     			for(var i = 0; i < offerData.length; i++){
     				var entry = offerData[i].SourceGeos.Geo;
     				markers.push([entry.Country._DisplayText,entry.Latitude,entry.Longitude]);
-    				
     				imageUrl = 'http://placehold.it/350x260';
     				var imageentry = offerData[i].OfferMedia.OfferImage.Entry;
     				for(var j = 0; j < imageentry.length;j++){
