@@ -33,6 +33,7 @@
 		<jstl.version>1.2</jstl.version>
 		<javamail.version>1.4</javamail.version>
 		<javaxactivation.version>1.1.1</javaxactivation.version>
+		<google.data.version>1.47.1</google.data.version>
 	</properties>
 	<modules>
 		<module>dione-model</module>
@@ -250,7 +251,21 @@
 				<artifactId>activation</artifactId>
 				<version>${javaxactivation.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>com.google.gdata</groupId>
+				<artifactId>core</artifactId>	
+				<version>${google.data.version}</version>			
+				<exclusions>
+					<exclusion>
+						<groupId>com.google.guava</groupId> 
+						<artifactId>guava</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.google.oauth-client</groupId> 
+						<artifactId>google-oauth-client-jetty</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>

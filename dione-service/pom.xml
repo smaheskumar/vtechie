@@ -146,6 +146,20 @@
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.google.gdata</groupId>
+			<artifactId>core</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId> 
+					<artifactId>guava</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.google.oauth-client</groupId> 
+					<artifactId>google-oauth-client-jetty</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
