@@ -18,7 +18,7 @@ public class DefaultAnalyticsProviderImpl implements AnalyticsProvider {
 		SearchRequest request = new SearchRequest();
 		if(StringUtils.isNotEmpty(externalUserId) && externalUserId.equals("joe.test3@email.com")){
 			List<String> tag = new ArrayList<String>();
-			tag.add("GAMES");
+			tag.add("GAMES, ELECTRONICS");
 			request.setTag(tag);
 			
 			List<Geo> sourceGeos = new ArrayList<Geo>();
