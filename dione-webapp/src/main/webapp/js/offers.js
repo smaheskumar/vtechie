@@ -1,13 +1,14 @@
 function loadOffersJSON(data_path)
 {
     var loyaltyDiv = $("#loyalty");
-    /*$.ajax({
+    $.ajax({
    		method: "GET",
-  		url: data_file,
+  		url: "personalizedoffer",
 	})
-  	.done(function( data ) {*/
-	$.getJSON( data_path, function( data ) {
-      	var offerData = data.BrowseOffersResponse.Return.OfferData;
+  	.done(function( data ) {
+	//$.getJSON( data_path, function( data ) {
+      	//var offerData = data.BrowseOffersResponse.Return.OfferData;
+      	var offerData = data.offerData;
    	    var divHtml = '', rowHtml = '<div class="row">';
 
    	    loyaltyDiv.html('');
@@ -19,18 +20,18 @@ function loadOffersJSON(data_path)
 	        divHtml = '<div class="col-sm-3 padding"><div class="col-item">';
 
 	        imageUrl = 'http://placehold.it/350x260';
-			var entry = offerData[i].OfferMedia.OfferImage.Entry;
+			var entry = offerData[i].offerMedia.offerImage.entry;
 	        for(var j = 0; j < entry.length;j++){
-	            if(entry[j].Key == 'MERCHANT_LOGO'){
-	                imageUrl = entry[j].Value.Item.ImageUrl;
+	            if(entry[j].key == 'MERCHANT_LOGO'){
+	                imageUrl = entry[j].value.item.imageUrl;
 	            }
 	        }
             divHtml += '<div class="photo"><img src="' + imageUrl  + '" class="img-responsive" alt="a" /></div>';
 
             divHtml += '<div class="info"><div class="row"><div class="price col-md-10"><div style="height: 60px;"><h5 style="color: white;overflow: visible; font-size: larger; left: 30px; padding-left: 10px;">';
 
-            divHtml += offerData[i].Headline.substr(0,30);
-            divHtml += '</h5></div><h5 class="price-text-color">' + offerData[i].TagCategory + '</h5>';
+            divHtml += offerData[i].headline.substr(0,30);
+            divHtml += '</h5></div><h6 class="price-text-color">' + offerData[i].merchant.name + '</h6>';
             divHtml += '</div></div><div class="separator clear-left">' +
 	                            //'<p class="btn-add">' +
 	                              //  '<i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>'+
