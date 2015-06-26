@@ -121,7 +121,7 @@
 <div class="form-group">
   <label class="col-md-2 control-label" for="textinput">Email</label>  
   <div class="col-md-8">
-  <input id="textinput" name="textinput" type="text" placeholder="Please Enter Your Email" class="form-control input-md" required="">
+  <input id="username" name="textinput" type="text" placeholder="Please Enter Your Email" class="form-control input-md" required="">
   <!--<span class="help-block">Please Enter Your User Name</span>  -->
   </div>
 </div>
@@ -130,7 +130,7 @@
 <div class="form-group">
   <label class="col-md-2 control-label" for="textinput">Password</label>  
   <div class="col-md-8">
-  <input id="textinput" name="textinput" type="password" placeholder="Please Enter Your Password" class="form-control input-md" required="">
+  <input id="password" name="textinput" type="password" placeholder="Please Enter Your Password" class="form-control input-md" required="">
   <!--<span class="help-block"></span>-->
   </div>
 </div>
@@ -392,6 +392,7 @@
     	});
     
     function initialize() {
+	
         var map;
         var bounds = new google.maps.LatLngBounds();
     	
@@ -403,11 +404,10 @@
 //    	var longitude;
     	$.ajax({
        		method: "GET",
-      		url: "personalizedoffer",
+      		url: "personalizedoffer?email="+$("#username").val(),
     	})
     	.done(function(data){
 		//$.getJSON( data_path, function( data ) {
-				console.log(data);
     			//var offerData = data.BrowseOffersResponse.Return.OfferData;
     			var offerData = data.offerData;
 
