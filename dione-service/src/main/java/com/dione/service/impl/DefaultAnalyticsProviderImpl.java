@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.dione.eop.api.io.Geo;
 import com.dione.eop.api.io.SearchRequest;
 import com.dione.service.AnalyticsProvider;
 import com.dione.utils.StringUtils;
@@ -19,7 +20,16 @@ public class DefaultAnalyticsProviderImpl implements AnalyticsProvider {
 			List<String> tag = new ArrayList<String>();
 			tag.add("GAMES");
 			request.setTag(tag);
+			
+			List<Geo> sourceGeos = new ArrayList<Geo>();
+			Geo geo = new Geo();
+			geo.setLatitude(37.55855F);
+			geo.setLongitude(-122.27108F);
+			sourceGeos.add(geo);
+			request.setSourceGeos(sourceGeos);
+			request.setRange(50);
 		}
+
 		return request;
 	}
 }

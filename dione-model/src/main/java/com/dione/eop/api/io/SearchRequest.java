@@ -29,6 +29,7 @@ public class SearchRequest {
     private List<String> productCode;
     private List<Geo> targetGeos;
     private String program;
+    private Integer range;
 
     @XmlElement(name = "Program")
     public String getProgram() {
@@ -228,5 +229,14 @@ public class SearchRequest {
     public void setTargetGeos(List<Geo> targetGeos) {
         this.targetGeos = targetGeos;
     }
+    
+    @XmlElement(name = "Range")
+	public Integer getRange() {
+		return range;
+	}
+
+	public void setRange(Integer range) {
+		this.range = range;
+	}
 
 }

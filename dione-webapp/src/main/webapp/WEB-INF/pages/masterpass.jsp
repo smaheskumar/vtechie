@@ -412,7 +412,7 @@
     			var offerData = data.offerData;
 
     			for(var i = 0; i < offerData.length; i++){
-    				var entry = offerData[i].sourceGeos.geo;
+    				var entry = offerData[i].nearByAddresses.nearByAddress;
     				markers.push([entry.country.displayText,entry.latitude,entry.longitude]);
     				imageUrl = 'http://placehold.it/350x260';
     				var imageentry = offerData[i].offerMedia.offerImage.entry;
