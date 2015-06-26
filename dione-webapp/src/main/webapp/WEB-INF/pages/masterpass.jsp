@@ -47,8 +47,6 @@
             		<li><a href="#" data-toggle="modal" data-target="#myModal1">Sign Up</a></li>-->
                 </ul>
             </div>
-
-				
 					
             <!-- /.navbar-collapse -->
         </div>
@@ -59,6 +57,7 @@
     <header id="header">
         <div class="container">
             <div class="intro-text">
+				
             </div>
         </div>
     </header>
@@ -98,7 +97,7 @@
     padding-top: 10px;">Simply enter your email address or mobile number and password to sign in.</div>
       <div class="modal-body">
         <div class="row">
-		
+				
 		<div class="col-lg-4">
 				
 				<div style="
@@ -170,7 +169,7 @@
 		</div>
   
   </div>
-  </div>
+</div>
 </div>
 
 
@@ -202,10 +201,10 @@
 						<ul>
 						  <li><i class="fa fa-credit-card fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: medium;">PAYMENT METHODS</p></li>
 						  <li><i class="fa fa-location-arrow fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;">ADDRESS</p></li>
-						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY PROGRAM</a></li>
+						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;" onclick="return showMap();">LOYALTY PROGRAM</a></li>
 						  <li><i class="fa fa-cart-plus fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="loyalty" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY OFFERS</a></li>
 						  	<ul>
-						  		<li><i class="fa fa-globe fa-1x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -10px; background-color: transparent; font-family: initial; font-size: small;">Near By</a></li>
+						  		<li><i class="fa fa-globe fa-1x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -10px; background-color: transparent; font-family: initial; font-size: small;" onclick="return showMap();">Near By</a></li>
 						  	</ul>
 						</ul>	
 					  </div>
@@ -363,12 +362,7 @@
 	});
     
     $(document).ready(function() {
-		$(".programms").click(function(){
-            //loadOffersJSON();
-			$("#programms").slideDown();
-			$("#loyalty").hide();
-			$("#default").hide();
-		});	
+		
 		$(".navitems").hide();
 		$(".navheader").click(function(){
 			$(".navitems").slideDown();
@@ -379,6 +373,16 @@
 		
 		
 	});
+	
+	function showMap()
+	{
+		    //loadOffersJSON();
+			$("#programms").slideDown();
+			$("#loyalty").hide();
+			$("#default").hide();
+			initialize();
+	}
+	
     
     jQuery(function($) {
         // Asynchronously Load the map API 
@@ -473,7 +477,8 @@
 
         // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
         var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-            //this.setZoom(2);
+            this.setZoom(7);
+			this.setCenter(new google.maps.LatLng(37.5072222,-122.2668));
             google.maps.event.removeListener(boundsListener);
     	});                
         
