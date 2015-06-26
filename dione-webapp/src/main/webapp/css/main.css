@@ -497,7 +497,7 @@ footer .bottom	{border-top:1px dotted #e4e4e4; padding:0;}
 footer .bottom a{font-size:12px;color:#fff;}
 
 
-.modal-dialog{width:1000px!important}
+.modal-dialog{}
 .col-item{color:#fff;border: 1px solid #3d3d4d;border-radius: 5px;background: black;}
 .padding	{padding:0!important; padding-right:2px!important}
 .margin		{margin:0!important}

@@ -47,6 +47,8 @@
             		<li><a href="#" data-toggle="modal" data-target="#myModal1">Sign Up</a></li>-->
                 </ul>
             </div>
+
+				
 					
             <!-- /.navbar-collapse -->
         </div>
@@ -57,7 +59,6 @@
     <header id="header">
         <div class="container">
             <div class="intro-text">
-				
             </div>
         </div>
     </header>
@@ -79,7 +80,7 @@
 	<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="width: 700px; top: 100;"">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<img src="${pageContext.request.contextPath}/img/logo1.png">
@@ -88,7 +89,7 @@
 	  
 	  <div style="
     position: relative;    display: block;    bottom: 0;    left: 0;    
-    width: 900px;    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
+    margin: 0 25px;    height: auto;    background: url(https://static.masterpass.com/lightbox/version48/Switch/assets/img/header_border.png) bottom left repeat-x;    
     padding-bottom: 10px; padding-top: 10px;">Sign in to your MasterPass<br></div>
 
 
@@ -97,8 +98,8 @@
     padding-top: 10px;">Simply enter your email address or mobile number and password to sign in.</div>
       <div class="modal-body">
         <div class="row">
-		<div class="col-lg-2"></div>
-		<div class="col-lg-3">
+		
+		<div class="col-lg-4">
 				
 				<div style="
     background-image: url(${pageContext.request.contextPath}/img/wallet_lg_bg.png);
@@ -113,7 +114,7 @@
     top: 50px;
 "></div></div>
 			</div>
-			<div class="col-lg-6">
+			<div class="col-lg-8"  style="position: relative; top: 10px;">
 				<form class="form-horizontal">
 <fieldset>
 
@@ -146,7 +147,30 @@
         <button type="button" class="btn btn-default">Cancel</button>
       </div>
     </div>
+  
+  	<div class="MasterPass-ribbon" style="position: relative;top: 100;>
+		<img class="ribbon-background" src="https://static.masterpass.com/lightbox/version50/Switch/assets/img/lightbox_footer.png">
+		<div class="notification-overlay"></div>
+		<div class="dialog-overlay"></div>
+
+		<div class="ribbon-container">
+			<div class="MasterPass-logo">
+				<img src="https://static.masterpass.com/lightbox/version50/Switch/assets/img/MP_for_footer.png" alt="MasterPass logo">
+				<img id="MasterPass_lock" class="MasterPass-lock" src="https://static.masterpass.com/lightbox/version50/Switch/assets/img/icon-ribbon-lock2.png" alt="">
+			</div>
+
+			<div class="ribbon-tools">
+				<a href="#" class="command" id="shopping-cart" style="display: none;">
+					<img src="https://static.masterpass.com/lightbox/version50/Switch/assets/img/cart.png" alt="Cart">
+				</a>
+				<a href="#" class="command" id="change-wallet" data-command="beginFlow" data-param="checkout" style="display: none;">
+					<img src="https://static.masterpass.com/lightbox/version50/Switch/assets/img/ChangeWallet.png" alt="Change Wallet">
+				</a>
+			</div>
+		</div>
+  
   </div>
+  
 </div>
 
 
@@ -373,32 +397,30 @@
     	var markers =[];
     	var infoWindowContent =[];
 //    	var longitude;
-    	$.ajax({
+    	/*$.ajax({
        		method: "GET",
-      		url: "personalizedoffer",
-    	})
-    	.done(function(data){
-		//$.getJSON( data_path, function( data ) {
+      		url: data_file,
+    	})*/
+    	//.done(function(data){
+		$.getJSON( data_path, function( data ) {
 				console.log(data);
-    			//var offerData = data.BrowseOffersResponse.Return.OfferData;
-    			var offerData = data.offerData;
+    			var offerData = data.BrowseOffersResponse.Return.OfferData;
     			for(var i = 0; i < offerData.length; i++){
-    				var entry = offerData[i].sourceGeos.geo;
-    				markers.push([entry.country.displayText,entry.latitude,entry.longitude]);
-    				markers.push(['Testing the shop','34.234','-74.325'])
+    				var entry = offerData[i].SourceGeos.Geo;
+    				markers.push([entry.Country._DisplayText,entry.Latitude,entry.Longitude]);
     				imageUrl = 'http://placehold.it/350x260';
-    				var imageentry = offerData[i].offerMedia.offerImage.entry;
+    				var imageentry = offerData[i].OfferMedia.OfferImage.Entry;
     				for(var j = 0; j < imageentry.length;j++){
-    					if(imageentry[j].key == 'MERCHANT_LOGO'){
-    						imageUrl = imageentry[j].value.item.imageUrl;
+    					if(imageentry[j].Key == 'MERCHANT_LOGO'){
+    						imageUrl = imageentry[j].Value.Item.ImageUrl;
     					}
     				}
     				
     				var divHtml = '<div class="col-sm-3 padding"><div class="col-item" Style="width:90px; height:100px">';
     				divHtml += '<div class="photo"><img src="' + imageUrl  + '" style="display:block;height:auto;max-width:90px" alt="a" /></div>';
     				divHtml += '<div class="info"><div class="row"><div class="price col-md-10"><div style="height: 60px;"><h5 style="color: wheat; font-size: small;">';
-    				divHtml += offerData[i].headline.substr(0,20);
-    				divHtml += '</h5></div><h5 class="price-text-color" style="font-size: smaller;">' + offerData[i].tagCategory + '</h5>';
+    				divHtml += offerData[i].Headline.substr(0,20);
+    				divHtml += '</h5></div><h5 class="price-text-color" style="font-size: smaller;">' + offerData[i].TagCategory + '</h5>';
     				divHtml += '</div></div><div class="separator clear-left">' +
     	                            '<p class="btn-details">' +
     	                                '<i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm" style="font-size: xx-small;">More details</a></p>'+
