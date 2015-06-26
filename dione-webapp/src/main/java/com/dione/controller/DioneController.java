@@ -36,7 +36,7 @@ public class DioneController {
  
 		logger.debug("Inside controller");
  
-		return "regionChart";
+		return "masterpass";
  
 	}
 

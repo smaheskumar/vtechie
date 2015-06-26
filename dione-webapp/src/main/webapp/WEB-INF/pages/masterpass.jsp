@@ -417,7 +417,7 @@
     				imageUrl = 'http://placehold.it/350x260';
     				var imageentry = offerData[i].offerMedia.offerImage.entry;
     				for(var j = 0; j < imageentry.length;j++){
-    					if(imageentry[j].key == 'MERCHANT_LOGO'){
+    					if(imageentry[j].key == 'LARGE'){
     						imageUrl = imageentry[j].value.item.imageUrl;
     					}
     				}
@@ -469,7 +469,7 @@
 
         // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
         var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-            this.setZoom(7);
+            this.setZoom(auto);
 			this.setCenter(new google.maps.LatLng(37.5072222,-122.2668));
             google.maps.event.removeListener(boundsListener);
     	});                

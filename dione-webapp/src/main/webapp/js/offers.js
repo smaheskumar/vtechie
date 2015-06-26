@@ -3,14 +3,14 @@ function loadOffersJSON(data_path)
     var loyaltyDiv = $("#loyalty");
     $.ajax({
    		method: "GET",
-  		url: "personalizedoffer",
+  		url: "personalizedoffer?email="+$("#username").val(),
 	})
   	.done(function( data ) {
 	//$.getJSON( data_path, function( data ) {
       	//var offerData = data.BrowseOffersResponse.Return.OfferData;
       	var offerData = data.offerData;
    	    var divHtml = '', rowHtml = '<div class="row">';
-
+	
    	    loyaltyDiv.html('');
 	    for(var i = 0; i < offerData.length; i++){  // loop complete json object
 	      //results.innerHTML += data[obj].user+" is "+data[obj].age+ " yrs and lives in "+ data[obj].country+"<hr/>" ;
@@ -22,7 +22,7 @@ function loadOffersJSON(data_path)
 	        imageUrl = 'http://placehold.it/350x260';
 			var entry = offerData[i].offerMedia.offerImage.entry;
 	        for(var j = 0; j < entry.length;j++){
-	            if(entry[j].key == 'MERCHANT_LOGO'){
+	            if(entry[j].key == 'LARGE'){
 	                imageUrl = entry[j].value.item.imageUrl;
 	            }
 	        }
