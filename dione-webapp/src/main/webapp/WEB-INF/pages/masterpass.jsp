@@ -201,7 +201,7 @@
 						<ul>
 						  <li><i class="fa fa-credit-card fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: medium;">PAYMENT METHODS</p></li>
 						  <li><i class="fa fa-location-arrow fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;">ADDRESS</p></li>
-						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;" onclick="return showMap();">LOYALTY PROGRAM</a></li>
+						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i>Loyalty Programs</li>
 						  <li><i class="fa fa-cart-plus fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="loyalty" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY OFFERS</a></li>
 						  	<ul>
 						  		<li><i class="fa fa-globe fa-1x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -10px; background-color: transparent; font-family: initial; font-size: small;" onclick="return showMap();">Near By</a></li>
@@ -426,7 +426,7 @@
     				divHtml += '<div class="photo pull-left"><img src="' + imageUrl  + '" style="display:block; width:100px;" alt="a" /></div>';
     				divHtml += '<div class="info pull-left"><h5>';
     				divHtml += offerData[i].headline.substr(0,20);
-    				divHtml += '</h5> <p><a href="#" class="btn btn-sm btn-danger">Get it</a></p> </div>' +
+    				divHtml += '</h5><p><b></b><a href="#" class="btn btn-sm btn-danger">$'+offerData[i].price+' Buy now</a></p> </div>' +
     	            '</div>';
     				infoWindowContent.push([divHtml]) ;
     			}
