@@ -28,19 +28,11 @@ function loadOffersJSON(data_path)
 	        }
             divHtml += '<div class="photo"><img src="' + imageUrl  + '" class="img-responsive" alt="a" /></div>';
 
-            divHtml += '<div class="info"><div class="row"><div class="price col-md-10"><div style="height: 60px;"><h5 style="color: white;overflow: visible; font-size: larger; left: 30px; padding-left: 10px;">';
+            divHtml += '<div class="info"><h5 style="color: white;font-size: 16px;">';
 
             divHtml += offerData[i].headline.substr(0,30);
-            divHtml += '</h5></div><h6 class="price-text-color">' + offerData[i].merchant.name + '</h6>';
-            divHtml += '</div></div><div class="separator clear-left">' +
-	                            //'<p class="btn-add">' +
-	                              //  '<i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>'+
-	                            '<p class="btn-details">' +
-	                                '<i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm" style="position: relative; left:  18px; top: -20px;">More details</a></p>'+
-	                        '</div>'+
-	                        '<div class="clearfix">' +
-	                        '</div>' +
-	                    '</div>' +
+            divHtml += '</h5><h6 class="price-text-color">' + offerData[i].merchant.name + '</h6>';
+            divHtml += '</div>' +
 	                '</div>' +
 				'</div>';
 
