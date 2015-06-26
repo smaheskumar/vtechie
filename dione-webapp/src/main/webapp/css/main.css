@@ -511,3 +511,7 @@ footer .bottom a{font-size:12px;color:#fff;}
 .leftnav ul	li a	{color:#fff}
 
 .main-screen .modal-body{padding:0; margin:0; margin-left:15px;}
+
+.addressBlurb	{ overflow:hidden;}
+.addressBlurb .photo	{ margin:0 15px 0 0;}
+.addressBlurb h5	{ color:orange; font-weight:bold;}	

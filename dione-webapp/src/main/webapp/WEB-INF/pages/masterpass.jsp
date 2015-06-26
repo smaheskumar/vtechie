@@ -422,20 +422,12 @@
     					}
     				}
     				
-    				var divHtml = '<div class="col-sm-3 padding"><div class="col-item" Style="width:90px; height:100px">';
-    				divHtml += '<div class="photo"><img src="' + imageUrl  + '" style="display:block;height:auto;max-width:90px" alt="a" /></div>';
-    				divHtml += '<div class="info"><div class="row"><div class="price col-md-10"><div style="height: 60px;"><h5 style="color: wheat; font-size: small;">';
+    				var divHtml = '<div class="addressBlurb padding">';
+    				divHtml += '<div class="photo pull-left"><img src="' + imageUrl  + '" style="display:block; width:100px;" alt="a" /></div>';
+    				divHtml += '<div class="info pull-left"><h5>';
     				divHtml += offerData[i].headline.substr(0,20);
-    				divHtml += '</h5></div><h5 class="price-text-color" style="font-size: smaller;">' + offerData[i].tagCategory + '</h5>';
-    				divHtml += '</div></div><div class="separator clear-left">' +
-    	                            '<p class="btn-details">' +
-    	                                '<i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm" style="font-size: xx-small;">More details</a></p>'+
-    	                        '</div>'+
-    	                        '<div class="clearfix">' +
-    	                        '</div>' +
-    	                    '</div>' +
-    	                '</div>' +
-    				'</div>';
+    				divHtml += '</h5> <p><a href="#" class="btn btn-sm btn-danger">Get it</a></p> </div>' +
+    	            '</div>';
     				infoWindowContent.push([divHtml]) ;
     			}
     			
