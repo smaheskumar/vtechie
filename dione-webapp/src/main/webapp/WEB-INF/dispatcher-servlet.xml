@@ -29,4 +29,5 @@
 	<mvc:resources mapping="/fonts/**" location="/fonts/"/>
 	<mvc:resources mapping="/json/**" location="/json/"/>
  
+ 	<import resource="classpath*:dioneContext.xml"/>
 </beans>

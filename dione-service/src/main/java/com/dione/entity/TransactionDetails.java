@@ -11,28 +11,38 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.DateTime;
+
 @Entity
 @Table(name="dione_txn_details")
 @NamedQueries({
 	@NamedQuery(name="getAllTxn",query="Select txnDet from TransactionDetails txnDet order by txnDet.id")
 })
-public class TransactionDetails extends BaseEntity implements Serializable {
+public class TransactionDetails implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
 	private Integer id;
+
+	@Type(type = "org.joda.time.contrib.hibernate.PersistentDateTime")
+    @Column(name = "TXNDATE")
+    private DateTime txnDate;
+
+	@Column(nullable = false, name="DE2_CARD_NBR")
+	private String cardNbr;
 	
-	@Column(unique = true, nullable = false, name="WALLET_ID")
-	private String walletId;
-	
-	@Column(name="MERCHANT")
+	@Column(name="DW_MERCH_DBA")
 	private String merchant;
 	
-	@Column(name="Description")
-	private String description;
+	@Column(name="DW_MERCH_STATE_CD")
+	private String category;
 	
-	@Column(name="User_Age")
-	private Integer userAge;
+	@Column(name="DW_MERCH_CITY_NAME")
+	private String merchantCity;
+	
+	@Column(name="CATEGORY")
+	private String merchantState;
 
 	public Integer getId() {
 		return id;
@@ -42,12 +52,20 @@ public class TransactionDetails extends BaseEntity implements Serializable {
 		this.id = id;
 	}
 
-	public String getWalletId() {
-		return walletId;
+	public DateTime getTxnDate() {
+		return txnDate;
 	}
 
-	public void setWalletId(String walletId) {
-		this.walletId = walletId;
+	public void setTxnDate(DateTime txnDate) {
+		this.txnDate = txnDate;
+	}
+
+	public String getCardNbr() {
+		return cardNbr;
+	}
+
+	public void setCardNbr(String cardNbr) {
+		this.cardNbr = cardNbr;
 	}
 
 	public String getMerchant() {
@@ -58,20 +76,35 @@ public class TransactionDetails extends BaseEntity implements Serializable {
 		this.merchant = merchant;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public Integer getUserAge() {
-		return userAge;
+	public String getMerchantCity() {
+		return merchantCity;
 	}
 
-	public void setUserAge(Integer userAge) {
-		this.userAge = userAge;
+	public void setMerchantCity(String merchantCity) {
+		this.merchantCity = merchantCity;
 	}
 
+	public String getMerchantState() {
+		return merchantState;
+	}
+
+	public void setMerchantState(String merchantState) {
+		this.merchantState = merchantState;
+	}
+
+	@Override
+	public String toString() {
+		return String
+				.format("{id:%s, txnDate:%s, cardNbr:%s, merchant:%s, category:%s, merchantCity:%s, merchantState:%s}",
+						id, txnDate, "*******", merchant, category, merchantCity,
+						merchantState);
+	}
 }

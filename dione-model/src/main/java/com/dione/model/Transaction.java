@@ -9,16 +9,15 @@ public class Transaction implements Serializable {
 	private String walletId;
 	private String merchant;
 	private String description;
-	private Integer userAge;
+	private String merchantCity;
 	
-	public Transaction(Integer id, String walletId, String merchant,
-			String description, Integer userAge) {
+	public Transaction(Integer id, String walletId, String merchant, String description, String merchantCity) {
 		super();
 		this.id = id;
 		this.walletId = walletId;
 		this.merchant = merchant;
 		this.description = description;
-		this.userAge = userAge;
+		this.merchantCity = merchantCity;
 	}
 
 	public Integer getId() {
@@ -53,18 +52,18 @@ public class Transaction implements Serializable {
 		this.description = description;
 	}
 
-	public Integer getUserAge() {
-		return userAge;
+	public String getMerchantCity() {
+		return merchantCity;
 	}
 
-	public void setUserAge(Integer userAge) {
-		this.userAge = userAge;
+	public void setMerchantCity(String merchantCity) {
+		this.merchantCity = merchantCity;
 	}
 
 	@Override
 	public String toString() {
-		return "Transaction [id=" + id + ", walletId=" + walletId
-				+ ", merchant=" + merchant + ", description=" + description
-				+ ", userAge=" + userAge + "]";
+		return String
+				.format("{id:%s, walletId:%s, merchant:%s, description:%s, merchantCity:%s}",
+						id, walletId, merchant, description, merchantCity);
 	}
 }

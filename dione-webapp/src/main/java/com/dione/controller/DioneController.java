@@ -3,15 +3,19 @@ package com.dione.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dione.eop.api.ApiClient;
-import com.dione.eop.api.io.SearchRequest;
+import com.dione.eop.api.search.gen.BrowseOffersResponse;
+import com.dione.model.request.PersonalOfferRequest;
+import com.dione.service.DioneService;
 import com.dione.service.sample.SampleService;
 
 @Controller
@@ -22,6 +26,9 @@ public class DioneController {
 	private SampleService sampleService;
 	
 	private ApiClient apiClient = new ApiClient();
+	
+	@Autowired
+	private DioneService dioneService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(ModelMap model) {
@@ -72,5 +79,10 @@ public class DioneController {
 		return "tempmasterpass";
 	}
 	
-
+	@RequestMapping(value = "/personalizedoffer", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody BrowseOffersResponse.Return getPersonalizedOffer(ModelMap model, @ModelAttribute PersonalOfferRequest personalOfferRequest) {
+		logger.debug("Inside controller");
+		BrowseOffersResponse personalizedOffer = dioneService.getPersonalizedOffer(personalOfferRequest);
+		return personalizedOffer.getReturn();
+	}
 }

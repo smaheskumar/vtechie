@@ -33,12 +33,12 @@
 	</ul>
 	<h3>From DB</h3>
 	<table border="1">
-		<tr><th>ID</th><th>Merchant</th><th>Description</th></tr>
+		<tr><th>ID</th><th>Merchant</th><th>Category</th></tr>
 	<c:forEach var="txn" items="${txns}">
 		<tr>
 			<td>${txn.id}</td>
 			<td>${txn.merchant}</td>
-			<td>${txn.description}</td>
+			<td>${txn.cateogry}</td>
 		</tr>
 	</c:forEach>
 	</table>

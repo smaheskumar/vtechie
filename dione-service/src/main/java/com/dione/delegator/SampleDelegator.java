@@ -19,7 +19,7 @@ public class SampleDelegator {
 		List<Transaction> txns = new ArrayList<Transaction>();
 		List<TransactionDetails> txnDetails = dao.fetchListFromNamedQuery(QueryType.JPQL, "getAllTxn");
 		for(TransactionDetails details : txnDetails){
-			txns.add(new Transaction(details.getId(), details.getWalletId(), details.getMerchant(), details.getDescription(), details.getUserAge()));
+			txns.add(new Transaction(details.getId(), details.getCardNbr(), details.getMerchant(), details.getCategory(), details.getMerchantCity()));
 		}
 		return txns;
 	}
