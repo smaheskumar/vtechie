@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import javax.net.ssl.HttpsURLConnection;
 import javax.xml.bind.JAXBException;
 
+import org.springframework.stereotype.Component;
+
 import com.dione.eop.api.io.SearchRequest;
 import com.dione.eop.api.offerdetail.gen.GetOfferDetailsResponse;
 import com.dione.eop.api.sample.client.MCApiUtil;
@@ -16,6 +18,7 @@ import com.dione.eop.api.util.PropertyUtil;
 /**
  * Ravi K
  */
+@Component
 public class ApiClient {
 
     private boolean isProduction = PropertyUtil.getInstance().getBooleanProperty(PropertyUtil.API_PROD_ENABLE);
