@@ -38,7 +38,7 @@
 		<tr>
 			<td>${txn.id}</td>
 			<td>${txn.merchant}</td>
-			<td>${txn.cateogry}</td>
+			<td>${txn.category}</td>
 		</tr>
 	</c:forEach>
 	</table>

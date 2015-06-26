@@ -80,8 +80,10 @@ public class DioneController {
 	}
 	
 	@RequestMapping(value = "/personalizedoffer", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody BrowseOffersResponse.Return getPersonalizedOffer(ModelMap model, @ModelAttribute PersonalOfferRequest personalOfferRequest) {
+	public @ResponseBody BrowseOffersResponse.Return getPersonalizedOffer(ModelMap model, @ModelAttribute String email) {
 		logger.debug("Inside controller");
+		PersonalOfferRequest personalOfferRequest = new PersonalOfferRequest();
+		personalOfferRequest.setAppUserId(email);
 		BrowseOffersResponse personalizedOffer = dioneService.getPersonalizedOffer(personalOfferRequest);
 		return personalizedOffer.getReturn();
 	}
