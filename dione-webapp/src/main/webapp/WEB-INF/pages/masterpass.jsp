@@ -57,8 +57,7 @@
     <header id="header">
         <div class="container">
             <div class="intro-text">
-				Your Shortcut to What Counts.
-				Simple and secure shopping every time on any connected device with MasterPas by MasterCard.
+				
             </div>
         </div>
     </header>
@@ -131,7 +130,7 @@
 <div class="form-group">
   <label class="col-md-2 control-label" for="textinput">Password</label>  
   <div class="col-md-8">
-  <input id="textinput" name="textinput" type="text" placeholder="Please Enter Your Password" class="form-control input-md" required="">
+  <input id="textinput" name="textinput" type="password" placeholder="Please Enter Your Password" class="form-control input-md" required="">
   <!--<span class="help-block"></span>-->
   </div>
 </div>
