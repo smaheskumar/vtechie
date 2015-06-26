@@ -184,38 +184,38 @@
       </div>
       <div class="modal-body">
         <div class="row">
-			<div class="col-md-2 leftnav" style="height:800px">
+			<div class="col-md-2 leftnav" style="height:800px; width:200px">
 				<div><i class="fa fa-home iconOrange fa-3x" style="float: left; color:#FB9B1E" ></i><h5 class="navheader" style="position: relative; left: 10px; top: 15px; background-color: transparent; font-family: initial; font-size: medium;">HOME</h5>
 				<br> <br></div>
 				<div>
-					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">MY ACCOUNT</h5>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px; color:wheat">MY ACCOUNT</h5>
 					  <div>
 						<ul>
-						  <li><i class="fa fa-user fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">PROFILE</p></li>
-						  <li><i class="fa fa-cog fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">SETTINGS</p></li>
-						  <li><i class="fa fa-share-alt fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;">CONNECTIONS</p></li>
+						  <li><i class="fa fa-user fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;color:wheat">PROFILE</p></li>
+						  <li><i class="fa fa-cog fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium; color:wheat">SETTINGS</p></li>
+						  <li><i class="fa fa-share-alt fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 5px; background-color: transparent; font-family: initial; font-size: medium;color:wheat">CONNECTIONS</p></li>
 						</ul>
 					  </div>
-					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">MY WALLET</h5>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;color:wheat">MY WALLET</h5>
 					  <div>
 						<ul>
-						  <li><i class="fa fa-credit-card fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: medium;">PAYMENT METHODS</p></li>
-						  <li><i class="fa fa-location-arrow fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;">ADDRESS</p></li>
-						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;">Loyalty Programs</p></li>
-						  <li><i class="fa fa-cart-plus fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="loyalty" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: x-small;">LOYALTY OFFERS</a></li>
+						  <li><i class="fa fa-credit-card fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: medium;color:wheat">PAYMENT METHODS</p></li>
+						  <li><i class="fa fa-location-arrow fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;color:wheat">ADDRESS</p></li>
+						  <li><i class="fa fa-shopping-cart fa-2x" style="float: left; color:#FB9B1E"></i><p style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: medium;color:wheat">Loyalty Programs</p></li>
+						  <li><i class="fa fa-cart-plus fa-2x" style="float: left; color:#FB9B1E"></i><a href="#" class="loyalty" style="position: relative; left: 10px; top: -5px; background-color: transparent; font-family: initial; font-size: small;">LOYALTY OFFERS</a></li>
 						  	<ul>
 						  		<li><i class="fa fa-globe fa-1x" style="float: left; color:#FB9B1E"></i><a href="#" class="programms" style="position: relative; left: 10px; top: -10px; background-color: transparent; font-family: initial; font-size: small;" onclick="return showMap();">Near By</a></li>
 						  	</ul>
 						</ul>	
 					  </div>
 					  <div></div>
-					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">WHATS NEW</h5>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;color:wheat">WHATS NEW</h5>
 					<br>	
-					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;">LEGAL</h5>
+					<h5 class="navheader" style="left: 30px;font-size: medium; padding-left: 20px;color:wheat">LEGAL</h5>
 						<div>
 							<ul>
-							  <li><h6 style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: large;">Privacy</h6></li>
-							  <li><h6 style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: large;">Terms of Use</h6></li>
+							  <li><h6 style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: large;color:wheat">Privacy</h6></li>
+							  <li><h6 style="position: relative; left: 10px; top: 10px; background-color: transparent; font-family: initial; font-size: large;color:wheat">Terms of Use</h6></li>
 							</ul>
 						 </div>
 						<br>
