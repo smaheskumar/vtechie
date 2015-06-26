@@ -148,7 +148,7 @@
       </div>
     </div>
   
-  	<div class="MasterPass-ribbon" style="position: relative;top: 100;>
+  	<div class="MasterPass-ribbon" style="position: relative;top: 100;">
 		<img class="ribbon-background" src="https://static.masterpass.com/lightbox/version50/Switch/assets/img/lightbox_footer.png">
 		<div class="notification-overlay"></div>
 		<div class="dialog-overlay"></div>
@@ -170,7 +170,7 @@
 		</div>
   
   </div>
-  
+  </div>
 </div>
 
 
@@ -178,7 +178,7 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content main-screen">
+    <div class="modal-content main-screen" Style="width:900px"">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <img src="${pageContext.request.contextPath}/img/logo1.png">
@@ -397,30 +397,32 @@
     	var markers =[];
     	var infoWindowContent =[];
 //    	var longitude;
-    	/*$.ajax({
+    	$.ajax({
        		method: "GET",
-      		url: data_file,
-    	})*/
-    	//.done(function(data){
-		$.getJSON( data_path, function( data ) {
+      		url: "personalizedoffer",
+    	})
+    	.done(function(data){
+		//$.getJSON( data_path, function( data ) {
 				console.log(data);
-    			var offerData = data.BrowseOffersResponse.Return.OfferData;
+    			//var offerData = data.BrowseOffersResponse.Return.OfferData;
+    			var offerData = data.offerData;
+
     			for(var i = 0; i < offerData.length; i++){
-    				var entry = offerData[i].SourceGeos.Geo;
-    				markers.push([entry.Country._DisplayText,entry.Latitude,entry.Longitude]);
+    				var entry = offerData[i].sourceGeos.geo;
+    				markers.push([entry.country.displayText,entry.latitude,entry.longitude]);
     				imageUrl = 'http://placehold.it/350x260';
-    				var imageentry = offerData[i].OfferMedia.OfferImage.Entry;
+    				var imageentry = offerData[i].offerMedia.offerImage.entry;
     				for(var j = 0; j < imageentry.length;j++){
-    					if(imageentry[j].Key == 'MERCHANT_LOGO'){
-    						imageUrl = imageentry[j].Value.Item.ImageUrl;
+    					if(imageentry[j].key == 'MERCHANT_LOGO'){
+    						imageUrl = imageentry[j].value.item.imageUrl;
     					}
     				}
     				
     				var divHtml = '<div class="col-sm-3 padding"><div class="col-item" Style="width:90px; height:100px">';
     				divHtml += '<div class="photo"><img src="' + imageUrl  + '" style="display:block;height:auto;max-width:90px" alt="a" /></div>';
     				divHtml += '<div class="info"><div class="row"><div class="price col-md-10"><div style="height: 60px;"><h5 style="color: wheat; font-size: small;">';
-    				divHtml += offerData[i].Headline.substr(0,20);
-    				divHtml += '</h5></div><h5 class="price-text-color" style="font-size: smaller;">' + offerData[i].TagCategory + '</h5>';
+    				divHtml += offerData[i].headline.substr(0,20);
+    				divHtml += '</h5></div><h5 class="price-text-color" style="font-size: smaller;">' + offerData[i].tagCategory + '</h5>';
     				divHtml += '</div></div><div class="separator clear-left">' +
     	                            '<p class="btn-details">' +
     	                                '<i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm" style="font-size: xx-small;">More details</a></p>'+

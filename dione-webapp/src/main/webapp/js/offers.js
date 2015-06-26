@@ -14,8 +14,8 @@ function loadOffersJSON(data_path)
    	    loyaltyDiv.html('');
 	    for(var i = 0; i < offerData.length; i++){  // loop complete json object
 	      //results.innerHTML += data[obj].user+" is "+data[obj].age+ " yrs and lives in "+ data[obj].country+"<hr/>" ;
-	        console.log(offerData[i].Headline);
-	        console.log('Tag;'+offerData[i].TagCategory);
+	        console.log(offerData[i].headline);
+	        console.log('Tag;'+offerData[i].tagCategory);
 
 	        divHtml = '<div class="col-sm-3 padding"><div class="col-item">';
 
