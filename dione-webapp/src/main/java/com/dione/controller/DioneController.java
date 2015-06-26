@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dione.eop.api.ApiClient;
@@ -80,7 +81,7 @@ public class DioneController {
 	}
 	
 	@RequestMapping(value = "/personalizedoffer", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody BrowseOffersResponse.Return getPersonalizedOffer(ModelMap model, @ModelAttribute String email) {
+	public @ResponseBody BrowseOffersResponse.Return getPersonalizedOffer(ModelMap model, @RequestParam(required = false) String email) {
 		logger.debug("Inside controller");
 		PersonalOfferRequest personalOfferRequest = new PersonalOfferRequest();
 		personalOfferRequest.setAppUserId(email);
