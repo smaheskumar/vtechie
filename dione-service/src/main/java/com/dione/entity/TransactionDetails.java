@@ -35,13 +35,13 @@ public class TransactionDetails implements Serializable {
 	@Column(name="DW_MERCH_DBA")
 	private String merchant;
 	
-	@Column(name="DW_MERCH_STATE_CD")
+	@Column(name="CATEGORY")
 	private String category;
 	
 	@Column(name="DW_MERCH_CITY_NAME")
 	private String merchantCity;
 	
-	@Column(name="CATEGORY")
+	@Column(name="DW_MERCH_STATE_CD")
 	private String merchantState;
 
 	public Integer getId() {
