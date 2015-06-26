@@ -26,7 +26,7 @@ function loadOffersJSON(data_path)
 	                imageUrl = entry[j].value.item.imageUrl;
 	            }
 	        }
-            divHtml += '<div class="photo"><img src="' + imageUrl  + '" class="img-responsive" alt="a" /></div>';
+            divHtml += '<div class="photo" style="height:130px; background:url(' + imageUrl +  ') no-repeat center center; background-size:cover; "></div>';
 
             divHtml += '<div class="info"><h5 style="color: white;font-size: 16px;">';
 
